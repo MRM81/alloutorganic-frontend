@@ -29,7 +29,7 @@ export class Client extends BaseClient {
     constructor(baseUrl?: string, http?: { fetch(url: RequestInfo, init?: RequestInit): Promise<Response> }) {
         super();
         this.http = http ? http : window as any;
-        this.baseUrl = baseUrl ?? "https://localhost:7226";
+        this.baseUrl = baseUrl ?? "http://localhost:5203";
     }
 
     post_GetAllPaged(page: number | undefined, pageSize: number | undefined): Promise<PostDto[]> {
@@ -278,11 +278,11 @@ export class Client extends BaseClient {
         return Promise.resolve<AuthResult>(null as any);
     }
 
-    auth_Login(loginDTO: LoginDto): Promise<AuthResult> {
+    auth_Login(userDTO: UserDto): Promise<AuthResult> {
         let url_ = this.baseUrl + "/api/Auth/login";
         url_ = url_.replace(/[?&]$/, "");
 
-        const content_ = JSON.stringify(loginDTO);
+        const content_ = JSON.stringify(userDTO);
 
         let options_: RequestInit = {
             body: content_,
@@ -592,22 +592,17 @@ export interface ProblemDetails {
 
 export interface RegisterDto {
     user: UserDto;
-    login: LoginDto;
 }
 
 export interface UserDto {
     id?: string | undefined;
-    firstName: string;
-    lastName: string;
-    phoneNumber: string;
+    firstName?: string | undefined;
+    lastName?: string | undefined;
+    phoneNumber?: string | undefined;
     email: string;
+    password: string;
     role?: string | undefined;
     status?: string | undefined;
-}
-
-export interface LoginDto {
-    username: string;
-    password: string;
 }
 
 export class ApiException extends Error {

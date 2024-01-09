@@ -1,6 +1,12 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+body {
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+}
+
 
 :root {
   --foreground-rgb: 0, 0, 0;
@@ -13,6 +19,23 @@
     --foreground-rgb: 255, 255, 255;
     --background-start-rgb: 0, 0, 0;
     --background-end-rgb: 0, 0, 0;
+  }
+}
+
+.logo-img {
+  width: 200px;
+  margin: 20px 0px;
+}
+
+@media screen and (max-width: 480px) {
+  .logo-img {
+    width: 120px;
+  }
+}
+
+@media screen and (max-width: 380px) {
+  .logo-img {
+    width: 100px;
   }
 }
 

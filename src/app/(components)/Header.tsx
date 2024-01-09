@@ -1,67 +1,139 @@
-'use client'
-import Link from "next/link";
+"use client";
 import React from "react";
-import {
-  AppBar,
-  Box,
-  Toolbar,
-  Typography,
-  Stack,
-  Button,
-  ButtonGroup,
-  IconButton,
-} from "@mui/material";
-import MenuIcon from "@mui/icons-material/Menu";
-import { getServerSession } from "next-auth";
-import { options } from "../api/auth/[...nextauth]/options";
+import { AppBar, Toolbar, Typography, Stack } from "@mui/material";
+import { Button, IconButton, Grid, Box } from "@mui/material";
+import PersonIcon from "@mui/icons-material/Person";
+import SearchMenu from "./SearchMenu";
+import MobileMenu from "./MobileMenu";
+import Cart from "./Cart";
+import { useSession } from "next-auth/react";
 
-const Nav = async () => {
-  const session = await getServerSession(options);
+const Header = () => {
+  const { data: session } = useSession({ required: false });
 
-  console.log(session)
   return (
     <Box sx={{ flexGrow: 1 }}>
       <AppBar position="static">
-        <Toolbar>
-          <IconButton
-            size="large"
-            edge="start"
-            color="inherit"
-            aria-label="menu"
-            sx={{ mr: 2 }}
+        <Box bgcolor={"primary.main"} height="30px" pt="2px">
+          <Typography
+            variant="subtitle1"
+            component="h6"
+            color="white"
+            align="center"
           >
-            <MenuIcon />
-          </IconButton>
-          <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
-            All Out Organic
+            Love the life you live
           </Typography>
-
-          <ButtonGroup variant="text">
-            <Button sx={{ color: "white" }} href="/">Home</Button>
-            <Button sx={{ color: "white" }} href="/CreateUser">Create User</Button>
-            <Button sx={{ color: "white" }} href="/ClientMember">Client Member</Button>
-            <Button sx={{ color: "white" }} href="/Member">Member</Button>
-            <Button sx={{ color: "white" }} href="/Public">Public</Button>
-
-            {session ? (
-              <Button sx={{ color: "white" }} href="/api/auth/signout?callbackUrl=/">Logout</Button>
-            ) : (
-              <Button sx={{ color: "white" }} href="/api/auth/signin?callbackUrl=/">Login</Button>
-            )}
-          </ButtonGroup>
-          {session ? (
-               <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
-               {"Session: " + session.user.name }
-             </Typography>
-            ) : (
-              <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
-              No Session
+        </Box>
+        {session ? (
+          <Box position="absolute" top="4px" right="20px">
+            <Typography variant="body1" component="p">
+              {"Welcome: " + session.user.email}
             </Typography>
-            )}
+          </Box>
+        ) : (
+          <></>
+        )}
+        <Toolbar
+          sx={{
+            backgroundColor: "white",
+            display: "flex",
+            justifyContent: "center",
+          }}
+        >
+          <Stack direction="column" alignItems="center" justifyContent="center">
+            <Grid
+              container
+              justifyContent={"space-between"}
+              alignItems="center"
+              width="100vw"
+              sx={{ px: { xs: "20px", md: "70px" } }}
+            >
+              <Grid item>
+                <MobileMenu />
+                <SearchMenu />
+              </Grid>
+              <Grid item>
+                <a href="/">
+                  <img
+                    className="logo-img"
+                    src="logo2.jpg"
+                    alt="Logo image"
+                  ></img>
+                </a>
+              </Grid>
+              <Grid item>
+                <IconButton
+                  size="large"
+                  edge="end"
+                  color="primary"
+                  aria-label="menu"
+                  href="/Dashboard"
+                >
+                  <PersonIcon />
+                </IconButton>
+                <Cart />
+              </Grid>
+            </Grid>
+
+            <Stack
+              direction="row"
+              alignItems="center"
+              justifyContent="space-between"
+            >
+              <Stack
+                sx={{ display: { xs: "none", md: "flex" } }}
+                direction="row"
+                alignItems="center"
+                justifyContent="center"
+              >
+                {session ? (
+                   <Button color="primary" href="/Dashboard">
+                   Dashboard
+                 </Button>
+                ) : (
+                  <></>
+                )}
+                <Button color="primary" href="/Blog">
+                  Blog
+                </Button>
+                <Button color="primary" href="/Shop">
+                  Shop
+                </Button>
+                <Button color="primary" href="/Recipes">
+                  Recipes
+                </Button>
+                <Button color="primary" href="/About">
+                  About
+                </Button>
+                <Button color="primary" href="/Contact">
+                  Contact
+                </Button>
+                {session ? (
+                  <Button
+                    variant="outlined"
+                    size="small"
+                    color="primary"
+                    href="/api/auth/signout?callbackUrl=/"
+                  >
+                    Logout
+                  </Button>
+                ) : (
+                  <Button
+                    variant="outlined"
+                    size="small"
+                    color="primary"
+                    href="/api/auth/signin?callbackUrl=/"
+                  >
+                    Login
+                  </Button>
+                )}
+              </Stack>
+            </Stack>
+          </Stack>
         </Toolbar>
       </AppBar>
     </Box>
   );
 };
 
-export default Nav;
+export default Header;

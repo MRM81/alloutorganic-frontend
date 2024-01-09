@@ -1,16 +1,16 @@
 import React from "react";
 import { Box, Stack, Typography } from "@mui/material";
 
-const Home = () => {
+const Contact = () => {
   return (
     <Box>
       <Stack height="50vh" justifyContent="center" alignItems="center">
         <Typography variant="h3" component="h3" color="primary">
-          HOME
+          CONTACT
         </Typography>
       </Stack>
     </Box>
   );
 };
 
-export default Home;
+export default Contact;

@@ -1,16 +1,15 @@
 import CredentialsProvider from "next-auth/providers/credentials";
-import { UserDto, AuthResult, LoginDto } from "@/app/apiClient/Client";
 import { Auth, GetUser } from "../../../apiClient/Utils/route";
-import User from "../../../../types/next-auth";
+
 export const options = {
   providers: [
     CredentialsProvider({
       name: "Credentials",
       credentials: {
-        username: {
-          label: "username:",
+        email: {
+          label: "email:",
           type: "text",
-          placeholder: "your-username",
+          placeholder: "your-email",
         },
         password: {
           label: "password:",
@@ -21,7 +20,7 @@ export const options = {
       async authorize(credentials: any) {
         try {
           const authResult = await Auth(
-            credentials.username,
+            credentials.email,
             credentials.password
           );
 

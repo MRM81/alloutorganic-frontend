@@ -1,6 +1,6 @@
 const BASE_URL = process.env.BACKEND_URL as string;
 
-export async function Auth(username: string, password: string) {
+export async function Auth(email: string, password: string) {
   const response = await fetch(BASE_URL + "api/auth/login", {
     method: "POST",
     headers: {
@@ -8,7 +8,7 @@ export async function Auth(username: string, password: string) {
       "Content-Type": "application/json",
     },
     body: JSON.stringify({
-      username: username,
+      email: email,
       password: password,
     }),
   });
