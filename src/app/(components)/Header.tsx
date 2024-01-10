@@ -7,6 +7,8 @@ import SearchMenu from "./SearchMenu";
 import MobileMenu from "./MobileMenu";
 import Cart from "./Cart";
 import { useSession } from "next-auth/react";
+import Image from "next/image";
+import Link from "next/link";
 
 const Header = () => {
   const { data: session } = useSession({ required: false });
@@ -14,14 +16,18 @@ const Header = () => {
   return (
     <Box sx={{ flexGrow: 1 }}>
       <AppBar position="static">
-        <Box bgcolor={"primary.main"} height="30px" pt="2px">
+        <Box bgcolor={"primary.main"} height="30px" pt="5px">
           <Typography
-            variant="subtitle1"
-            component="h6"
-            color="white"
+            variant="body2"
+            fontFamily="georgia"
+            fontSize=".7em"
+            fontWeight="bold"
+            textTransform="uppercase"
+            component="p"
+            color="secondary"
             align="center"
           >
-            Love the life you live
+            Love the life you live, Live the life you love
           </Typography>
         </Box>
         {session ? (
@@ -52,14 +58,22 @@ const Header = () => {
                 <MobileMenu />
                 <SearchMenu />
               </Grid>
-              <Grid item>
-                <a href="/">
+              <Grid item p="20px 0px">
+                <Link href="/">
+                  <Image
+                    src="/logo.jpg"
+                    width={300}
+                    height={300}
+                    alt="Logo Image"
+                  ></Image>
+                </Link>
+                {/* <a href="/">
                   <img
                     className="logo-img"
                     src="logo2.jpg"
                     alt="Logo image"
                   ></img>
-                </a>
+                </a> */}
               </Grid>
               <Grid item>
                 <IconButton
@@ -87,9 +101,9 @@ const Header = () => {
                 justifyContent="center"
               >
                 {session ? (
-                   <Button color="primary" href="/Dashboard">
-                   Dashboard
-                 </Button>
+                  <Button color="primary" href="/Dashboard">
+                    Dashboard
+                  </Button>
                 ) : (
                   <></>
                 )}

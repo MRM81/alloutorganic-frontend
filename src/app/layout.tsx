@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import "./globals.css";
 import Header from "./(components)/Header";
+import Footer from "./(components)/Footer";
 import AuthProvider from "./(components)/AuthProvider";
 import ThemeRegistry from "@/theme/ThemeRegistry";
 
@@ -19,8 +20,9 @@ export default function RootLayout({
       <AuthProvider>
         <ThemeRegistry>
           <body className="bg-gray-100">
-            <Header/>
+            <Header />
             <div className="m-2">{children}</div>
+            <Footer />
           </body>
         </ThemeRegistry>
       </AuthProvider>
