@@ -4,15 +4,23 @@ import { Drawer, Button, ButtonGroup, IconButton, Box } from "@mui/material";
 import MenuIcon from "@mui/icons-material/Menu";
 import CloseIcon from "@mui/icons-material/Close";
 import { useSession } from "next-auth/react";
+import PersonIcon from "@mui/icons-material/Person";
+import SearchMenu from "./SearchMenu";
+import Cart from "./Cart";
 
 const MobileMenu = () => {
   const [openMenu, setOpenMenu] = useState(false);
   const { data: session } = useSession({ required: false });
-
   return (
     <>
       <Drawer
-        PaperProps={{ sx: { px: "20px", py: "10px", width: "400px" } }}
+        PaperProps={{
+          sx: {
+            px: "20px",
+            py: "10px",
+            width: { xs: "100vw", sm: "66vw", md: "50vw", lg: "33vw" },
+          },
+        }}
         anchor="left"
         open={openMenu}
         onClose={() => setOpenMenu(false)}
@@ -24,7 +32,7 @@ const MobileMenu = () => {
           <CloseIcon />
         </IconButton>
         <a href="/">
-          <img className="logo-img" src="logo2.jpg"></img>
+          <img className="logo-img" src="logo.jpg"></img>
         </a>
 
         <ButtonGroup
@@ -88,7 +96,7 @@ const MobileMenu = () => {
         sx={{ color: "primary" }}
         onClick={() => setOpenMenu(!openMenu)}
       >
-        <MenuIcon />
+        <MenuIcon fontSize="large" />
       </IconButton>
     </>
   );

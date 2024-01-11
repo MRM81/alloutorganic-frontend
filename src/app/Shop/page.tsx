@@ -9,6 +9,7 @@ const Shop = () => {
           SHOP
         </Typography>
       </Stack>
+      <Box height="700px" bgcolor="rgb(23, 77, 36, 0.1)" pt="40px"></Box>
     </Box>
   );
 };

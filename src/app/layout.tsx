@@ -19,9 +19,9 @@ export default function RootLayout({
     <html lang="en">
       <AuthProvider>
         <ThemeRegistry>
-          <body className="bg-gray-100">
+          <body>
             <Header />
-            <div className="m-2">{children}</div>
+            <div>{children}</div>
             <Footer />
           </body>
         </ThemeRegistry>

@@ -29,7 +29,7 @@ const Footer = () => {
       container
       p="30px"
       direction={{ xs: "column", lg: "row" }}
-      bgcolor="#222222"
+      bgcolor="primary.main"
       sx={{ px: { xs: "20px", md: "70px" } }}
     >
       <Grid item xs={6}>

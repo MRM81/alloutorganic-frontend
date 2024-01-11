@@ -16,7 +16,13 @@ const Cart = () => {
   return (
     <>
       <Drawer
-        PaperProps={{ sx: { px: "20px", py: "10px", width: "400px" } }}
+        PaperProps={{
+          sx: {
+            px: "20px",
+            py: "10px",
+            width: { xs: "100vw", sm: "66vw", md: "50vw", lg: "33vw" },
+          },
+        }}
         anchor="right"
         open={openMenu}
         onClose={() => setOpenMenu(false)}
@@ -39,7 +45,7 @@ const Cart = () => {
         sx={{ color: "primary.main" }}
         onClick={() => setOpenMenu(!openMenu)}
       >
-        <ShoppingCartIcon />
+        <ShoppingCartIcon fontSize="small" color="secondary" />
       </IconButton>
     </>
   );

@@ -14,31 +14,45 @@ const Header = () => {
   const { data: session } = useSession({ required: false });
 
   return (
-    <Box sx={{ flexGrow: 1 }}>
+    <Box sx={{ flexGrow: 1 }} mb="10px" boxShadow="2px 2px 5px grey">
       <AppBar position="static">
-        <Box bgcolor={"primary.main"} height="30px" pt="5px">
+        <Stack
+          direction="row"
+          bgcolor={"primary.main"}
+          height="30px"
+          alignItems="center"
+          justifyContent="space-between"
+          p="0px 10px"
+        >
+          <SearchMenu />
           <Typography
             variant="body2"
-            fontFamily="georgia"
-            fontSize=".7em"
+            fontFamily="sans-serif"
+            fontSize={{ xs: "0.6em", sm: "0.7em" }}
             fontWeight="bold"
             textTransform="uppercase"
             component="p"
             color="secondary"
             align="center"
           >
-            Love the life you live, Live the life you love
+            Love the life you live
           </Typography>
-        </Box>
-        {session ? (
-          <Box position="absolute" top="4px" right="20px">
-            <Typography variant="body1" component="p">
-              {"Welcome: " + session.user.email}
-            </Typography>
-          </Box>
-        ) : (
-          <></>
-        )}
+
+          <Stack direction="row">
+            <IconButton
+              size="small"
+              edge="end"
+              color="secondary"
+              aria-label="menu"
+              href="/Dashboard"
+            >
+              <PersonIcon fontSize="small" />
+            </IconButton>
+
+            <Cart />
+          </Stack>
+        </Stack>
+
         <Toolbar
           sx={{
             backgroundColor: "white",
@@ -49,45 +63,22 @@ const Header = () => {
           <Stack direction="column" alignItems="center" justifyContent="center">
             <Grid
               container
-              justifyContent={"space-between"}
+              justifyContent={"center"}
               alignItems="center"
               width="100vw"
               sx={{ px: { xs: "20px", md: "70px" } }}
             >
-              <Grid item>
-                <MobileMenu />
-                <SearchMenu />
-              </Grid>
-              <Grid item p="20px 0px">
-                <Link href="/">
-                  <Image
-                    src="/logo.jpg"
-                    width={300}
-                    height={300}
-                    alt="Logo Image"
-                  ></Image>
-                </Link>
-                {/* <a href="/">
-                  <img
-                    className="logo-img"
-                    src="logo2.jpg"
-                    alt="Logo image"
-                  ></img>
-                </a> */}
-              </Grid>
-              <Grid item>
-                <IconButton
-                  size="large"
-                  edge="end"
-                  color="primary"
-                  aria-label="menu"
-                  href="/Dashboard"
-                >
-                  <PersonIcon />
-                </IconButton>
-                <Cart />
-              </Grid>
+              <a href="/">
+                <img
+                  className="logo-img"
+                  src="logo.jpg"
+                  alt="Logo image"
+                ></img>
+              </a>
             </Grid>
+            <Box sx={{ display: { xs: "block", sm: "none" } }}>
+              <MobileMenu />
+            </Box>
 
             <Stack
               direction="row"
@@ -95,7 +86,7 @@ const Header = () => {
               justifyContent="space-between"
             >
               <Stack
-                sx={{ display: { xs: "none", md: "flex" } }}
+                sx={{ display: { xs: "none", sm: "flex" } }}
                 direction="row"
                 alignItems="center"
                 justifyContent="center"
@@ -124,7 +115,7 @@ const Header = () => {
                 </Button>
                 {session ? (
                   <Button
-                    variant="outlined"
+                    variant="contained"
                     size="small"
                     color="primary"
                     href="/api/auth/signout?callbackUrl=/"
@@ -151,3 +142,18 @@ const Header = () => {
 };
 
 export default Header;
+
+// sx={{
+//   position: "absolute",
+//   top: "2px",
+//   right: "20px",
+//   height: "26px",
+// }}
+
+// {session ? (
+//   <Typography variant="body2" component="p" color="secondary">
+//     {session.user.email}
+//   </Typography>
+// ) : (
+//   <></>
+// )}

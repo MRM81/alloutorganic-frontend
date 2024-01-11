@@ -10,7 +10,7 @@ import {
 } from "@mui/material";
 import SearchIcon from "@mui/icons-material/Search";
 import CloseIcon from "@mui/icons-material/Close";
-import InputAdornment from '@mui/material/InputAdornment';
+import InputAdornment from "@mui/material/InputAdornment";
 
 const SearchMenu = () => {
   const [openMenu, setOpenMenu] = useState(false);
@@ -18,8 +18,14 @@ const SearchMenu = () => {
   return (
     <>
       <Drawer
-        PaperProps={{ sx: { px: "20px", py: "10px", width: "400px" } }}
-        anchor="right"
+        PaperProps={{
+          sx: {
+            px: "20px",
+            py: "10px",
+            width: { xs: "100vw", sm: "66vw", md: "50vw", lg: "33vw" },
+          },
+        }}
+        anchor="left"
         open={openMenu}
         onClose={() => setOpenMenu(false)}
       >
@@ -50,7 +56,7 @@ const SearchMenu = () => {
         sx={{ color: "primary.main" }}
         onClick={() => setOpenMenu(!openMenu)}
       >
-        <SearchIcon />
+        <SearchIcon fontSize="small" color="secondary" />
       </IconButton>
     </>
   );
