@@ -76,7 +76,7 @@ const MobileMenu = () => {
 
         {session ? (
           <Button
-            variant="outlined"
+            variant="contained"
             size="small"
             href="/api/auth/signout?callbackUrl=/"
           >
@@ -84,7 +84,7 @@ const MobileMenu = () => {
           </Button>
         ) : (
           <Button
-            variant="outlined"
+            variant="contained"
             size="small"
             href="/api/auth/signin?callbackUrl=/"
           >
@@ -96,7 +96,7 @@ const MobileMenu = () => {
         sx={{ color: "primary" }}
         onClick={() => setOpenMenu(!openMenu)}
       >
-        <MenuIcon fontSize="large" />
+        <MenuIcon fontSize="large" color="primary" />
       </IconButton>
     </>
   );

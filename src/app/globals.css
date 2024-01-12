@@ -25,6 +25,13 @@ body {
 
 .logo-img {
   width: 250px;
+  height: auto;
+  margin: 20px 0px;
+}
+
+.logo-img-footer {
+  width: 350px;
+  height: auto;
   margin: 20px 0px;
 }
 

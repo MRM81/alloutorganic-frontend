@@ -6,9 +6,13 @@ import ChevronRightIcon from "@mui/icons-material/ChevronRight";
 const Home = () => {
   return (
     <Box bgcolor="white">
-      <Grid container direction={{ xs: "column", lg: "row" }} p={{xs:"40px 15px", sm:"40px 30px"}}>
-        <Grid container xs={12} lg={7} minHeight="500px">
-          <Grid container direction="row" justifyContent="space-between">
+      <Grid
+        container
+        direction={{ xs: "column", lg: "row" }}
+        p={{ md: "40px 30px", xl: "40px 180px"}}
+      >
+        <Grid container minHeight="500px">
+          <Grid container  direction="row" justifyContent="space-between">
             <Grid
               item
               xs={12}
@@ -19,7 +23,7 @@ const Home = () => {
                 backgroundSize: "cover",
                 backgroundPosition: "center",
                 backgroundRepeat: "no-repeat",
-                borderRadius: "10px",
+
                 boxShadow: "2px 2px 5px grey",
               }}
             >
@@ -49,7 +53,7 @@ const Home = () => {
                 backgroundSize: "cover",
                 backgroundPosition: "center",
                 backgroundRepeat: "no-repeat",
-                borderRadius: "10px",
+
                 boxShadow: "2px 2px 5px grey",
                 display: { xs: "none", md: "flex" },
               }}
@@ -75,9 +79,10 @@ const Home = () => {
         </Grid>
         <Grid
           container
-          direction="column"
           item
+          direction="column"
           xs={5}
+          lg={12}
           justifyContent="center"
           gap={3}
           alignItems="center"
@@ -120,7 +125,7 @@ const Home = () => {
       {/* ******************************* Start of Latest blog section **************************************** */}
       {/* ******************************* Start of Latest blog section **************************************** */}
 
-      <Box bgcolor="rgb(23, 77, 36, 0.1)" pt="50px">
+      <Box bgcolor="rgb(23, 77, 36, 0.1)"  p={{xs:"40px 0px", md: "40px 30px", xl: "40px 180px"}}>
         <Typography
           variant="h3"
           component="h3"
@@ -136,19 +141,18 @@ const Home = () => {
         </Typography>
 
         <Grid
-          direction={{ xs: "column", lg: "row" }}
           container
+          direction={{ xs: "column", lg: "row" }}
           sx={{ p: { xs: "20px", sm: "50px", lg: "50px 0px" } }}
           gap={3}
           justifyContent="center"
           alignItems="center"
         >
           <Grid
-            container
-            direction="column"
             item
+            container
             xs={3.5}
-            justifyContent="center"
+            justifyContent="left"
             gap={1}
             alignItems="center"
             boxShadow="2px 2px 5px grey"
@@ -165,17 +169,11 @@ const Home = () => {
               color="primary"
               textTransform="uppercase"
               fontFamily="impact"
-              textAlign="center"
               gutterBottom
             >
               Live a 100% organic lifestyle
             </Typography>
-            <Typography
-              variant="body2"
-              component="p"
-              textAlign="center"
-              gutterBottom
-            >
+            <Typography variant="body2" component="p" gutterBottom>
               Lorem ipsum dolor sit amet consectetur adipisicing elit. Pariatur
               voluptates enim consequatur, a itaque perspiciatis quam earum
               temporibus excepturi suscipit odio beatae alias porro hic placeat,
@@ -185,17 +183,16 @@ const Home = () => {
               suscipit odio beatae alias porro hic placeat, eius ab,
               exercitationem harum.
             </Typography>
-            <Button href="/about" variant="contained" size="large">
+            <Button href="/About" variant="contained" size="large">
               Learn More
             </Button>
           </Grid>
 
           <Grid
-            container
-            direction="column"
             item
+            container
             xs={3.5}
-            justifyContent="center"
+            justifyContent="left"
             gap={1}
             alignItems="center"
             boxShadow="2px 2px 5px grey"
@@ -212,17 +209,11 @@ const Home = () => {
               color="primary"
               textTransform="uppercase"
               fontFamily="impact"
-              textAlign="center"
               gutterBottom
             >
               Live a 100% organic lifestyle
             </Typography>
-            <Typography
-              variant="body2"
-              component="p"
-              textAlign="center"
-              gutterBottom
-            >
+            <Typography variant="body2" component="p" gutterBottom>
               Lorem ipsum dolor sit amet consectetur adipisicing elit. Pariatur
               voluptates enim consequatur, a itaque perspiciatis quam earum
               temporibus excepturi suscipit odio beatae alias porro hic placeat,
@@ -232,17 +223,16 @@ const Home = () => {
               suscipit odio beatae alias porro hic placeat, eius ab,
               exercitationem harum.
             </Typography>
-            <Button href="/about" variant="contained" size="large">
+            <Button href="/About" variant="contained" size="large">
               Learn More
             </Button>
           </Grid>
 
           <Grid
-            container
-            direction="column"
             item
+            container
             xs={3.5}
-            justifyContent="center"
+            justifyContent="left"
             gap={1}
             alignItems="center"
             boxShadow="2px 2px 5px grey"
@@ -259,17 +249,11 @@ const Home = () => {
               color="primary"
               textTransform="uppercase"
               fontFamily="impact"
-              textAlign="center"
               gutterBottom
             >
               Live a 100% organic lifestyle
             </Typography>
-            <Typography
-              variant="body2"
-              component="p"
-              textAlign="center"
-              gutterBottom
-            >
+            <Typography variant="body2" component="p" gutterBottom>
               Lorem ipsum dolor sit amet consectetur adipisicing elit. Pariatur
               voluptates enim consequatur, a itaque perspiciatis quam earum
               temporibus excepturi suscipit odio beatae alias porro hic placeat,
@@ -279,7 +263,7 @@ const Home = () => {
               suscipit odio beatae alias porro hic placeat, eius ab,
               exercitationem harum.
             </Typography>
-            <Button href="/about" variant="contained" size="large">
+            <Button href="/About" variant="contained" size="large">
               Learn More
             </Button>
           </Grid>

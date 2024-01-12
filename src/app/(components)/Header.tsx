@@ -14,7 +14,7 @@ const Header = () => {
   const { data: session } = useSession({ required: false });
 
   return (
-    <Box sx={{ flexGrow: 1 }} mb="10px" boxShadow="2px 2px 5px grey">
+    <Box sx={{ flexGrow: 1 }}>
       <AppBar position="static">
         <Stack
           direction="row"
@@ -25,7 +25,7 @@ const Header = () => {
           p="0px 10px"
         >
           <SearchMenu />
-          <Typography
+          {/* <Typography
             variant="body2"
             fontFamily="sans-serif"
             fontSize={{ xs: "0.6em", sm: "0.7em" }}
@@ -35,8 +35,16 @@ const Header = () => {
             color="secondary"
             align="center"
           >
-            Love the life you live
-          </Typography>
+            Live the life you love, Love the life you live
+          </Typography> */}
+
+          {session ? (
+            <Typography variant="body2" component="p" color="secondary">
+              {session.user.email}
+            </Typography>
+          ) : (
+            <></>
+          )}
 
           <Stack direction="row">
             <IconButton
@@ -58,6 +66,7 @@ const Header = () => {
             backgroundColor: "white",
             display: "flex",
             justifyContent: "center",
+            boxShadow: "2px 2px 5px grey",
           }}
         >
           <Stack direction="column" alignItems="center" justifyContent="center">
@@ -71,7 +80,7 @@ const Header = () => {
               <a href="/">
                 <img
                   className="logo-img"
-                  src="logo.jpg"
+                  src="logo2.jpg"
                   alt="Logo image"
                 ></img>
               </a>
@@ -86,7 +95,7 @@ const Header = () => {
               justifyContent="space-between"
             >
               <Stack
-                sx={{ display: { xs: "none", sm: "flex" } }}
+                sx={{ display: { xs: "none", sm: "flex" }, mb: "10px" }}
                 direction="row"
                 alignItems="center"
                 justifyContent="center"
@@ -149,11 +158,3 @@ export default Header;
 //   right: "20px",
 //   height: "26px",
 // }}
-
-// {session ? (
-//   <Typography variant="body2" component="p" color="secondary">
-//     {session.user.email}
-//   </Typography>
-// ) : (
-//   <></>
-// )}

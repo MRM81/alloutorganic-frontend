@@ -27,19 +27,13 @@ const Footer = () => {
   return (
     <Grid
       container
-      p="30px"
       direction={{ xs: "column", lg: "row" }}
+      p="40px"
       bgcolor="primary.main"
-      sx={{ px: { xs: "20px", md: "70px" } }}
     >
       <Grid item xs={6}>
         <Stack direction="column">
-          <Image
-            src="/logo.jpg"
-            width={300}
-            height={300}
-            alt="Picture of the author"
-          ></Image>
+          <img className="logo-img-footer" src="/logo.jpg" alt="Logo Image"></img>
 
           {/* <Typography
             variant="h5"
@@ -59,12 +53,7 @@ const Footer = () => {
           >
             Love the life you live, live the life you love!
           </Typography> */}
-          <Typography
-            variant="subtitle2"
-            component="p"
-            color="white"
-            mt="30px"
-          >
+          <Typography variant="subtitle2" component="p" color="white" mt="30px">
             Subscribe to Newsletter
           </Typography>
           <TextField
@@ -73,8 +62,8 @@ const Footer = () => {
             sx={{
               mt: "20px",
               mb: "40px",
-              width: { xs: "100%", lg: "70%"},
-              input: { color: 'white' } 
+              width: { xs: "100%", lg: "70%" },
+              input: { color: "white" },
             }}
             focused
             InputProps={{
@@ -96,81 +85,10 @@ const Footer = () => {
           />
         </Stack>
       </Grid>
-      <Grid container direction={{ xs: "column", sm: "row" }} xs={12} lg={6}>
-        <Grid item xs={6} direction="column" pb="20px">
-          <Typography
-            variant="h5"
-            component="h5"
-            color="secondary"
-            fontWeight="bold"
-            gutterBottom
-          >
-            Learn
-          </Typography>
-          <Link href="/">
-            <Typography
-              variant="subtitle1"
-              component="p"
-              color="secondary"
-              gutterBottom
-            >
-              About AOO
-            </Typography>
-          </Link>
-          <Link href="/">
-            <Typography
-              variant="subtitle1"
-              component="p"
-              color="secondary"
-              gutterBottom
-            >
-              FAQ
-            </Typography>
-          </Link>
-          <Link href="/">
-            <Typography
-              variant="subtitle1"
-              component="p"
-              color="secondary"
-              gutterBottom
-            >
-              Contact Us
-            </Typography>
-          </Link>
-          <Link href="/">
-            <Typography
-              variant="subtitle1"
-              component="p"
-              color="secondary"
-              gutterBottom
-            >
-              Carreers
-            </Typography>
-          </Link>
-          <Link href="/">
-            <Typography
-              variant="subtitle1"
-              component="p"
-              color="secondary"
-              gutterBottom
-            >
-              Our Mission
-            </Typography>
-          </Link>
-          <Link href="/">
-            <Typography
-              variant="subtitle1"
-              component="p"
-              color="secondary"
-              gutterBottom
-            >
-              Lifestyle Tips
-            </Typography>
-          </Link>
-        </Grid>
 
-        <Grid item xs={6} direction="column" pb="20px">
-          <Link href="/">
+      <Grid item container xs={6}>
+        <Grid container direction={{ xs: "column", sm: "row" }}>
+          <Grid item xs={6} pb="20px">
             <Typography
               variant="h5"
               component="h5"
@@ -178,69 +96,143 @@ const Footer = () => {
               fontWeight="bold"
               gutterBottom
             >
-              Community
+              Learn
             </Typography>
-          </Link>
-          <Link href="/">
-            <Typography
-              variant="subtitle1"
-              component="p"
-              color="secondary"
-              gutterBottom
-            >
-              About AOO
-            </Typography>
-          </Link>
-          <Link href="/">
-            <Typography
-              variant="subtitle1"
-              component="p"
-              color="secondary"
-              gutterBottom
-            >
-              FAQ
-            </Typography>
-          </Link>
-          <Link href="/">
-            <Typography
-              variant="subtitle1"
-              component="p"
-              color="secondary"
-              gutterBottom
-            >
-              Contact Us
-            </Typography>
-          </Link>
-          <Link href="/">
-            <Typography
-              variant="subtitle1"
-              component="p"
-              color="secondary"
-              gutterBottom
-            >
-              Careers
-            </Typography>
-          </Link>
-          <Link href="/">
-            <Typography
-              variant="subtitle1"
-              component="p"
-              color="secondary"
-              gutterBottom
-            >
-              Our Mission
-            </Typography>
-          </Link>
-          <Link href="/">
-            <Typography
-              variant="subtitle1"
-              component="p"
-              color="secondary"
-              gutterBottom
-            >
-              Lifestyle Tips
-            </Typography>
-          </Link>
+            <Link href="/">
+              <Typography
+                variant="subtitle1"
+                component="p"
+                color="secondary"
+                gutterBottom
+              >
+                About AOO
+              </Typography>
+            </Link>
+            <Link href="/">
+              <Typography
+                variant="subtitle1"
+                component="p"
+                color="secondary"
+                gutterBottom
+              >
+                FAQ
+              </Typography>
+            </Link>
+            <Link href="/">
+              <Typography
+                variant="subtitle1"
+                component="p"
+                color="secondary"
+                gutterBottom
+              >
+                Contact Us
+              </Typography>
+            </Link>
+            <Link href="/">
+              <Typography
+                variant="subtitle1"
+                component="p"
+                color="secondary"
+                gutterBottom
+              >
+                Carreers
+              </Typography>
+            </Link>
+            <Link href="/">
+              <Typography
+                variant="subtitle1"
+                component="p"
+                color="secondary"
+                gutterBottom
+              >
+                Our Mission
+              </Typography>
+            </Link>
+            <Link href="/">
+              <Typography
+                variant="subtitle1"
+                component="p"
+                color="secondary"
+                gutterBottom
+              >
+                Lifestyle Tips
+              </Typography>
+            </Link>
+          </Grid>
+
+          <Grid item xs={6} pb="20px">
+            <Link href="/">
+              <Typography
+                variant="h5"
+                component="h5"
+                color="secondary"
+                fontWeight="bold"
+                gutterBottom
+              >
+                Community
+              </Typography>
+            </Link>
+            <Link href="/">
+              <Typography
+                variant="subtitle1"
+                component="p"
+                color="secondary"
+                gutterBottom
+              >
+                About AOO
+              </Typography>
+            </Link>
+            <Link href="/">
+              <Typography
+                variant="subtitle1"
+                component="p"
+                color="secondary"
+                gutterBottom
+              >
+                FAQ
+              </Typography>
+            </Link>
+            <Link href="/">
+              <Typography
+                variant="subtitle1"
+                component="p"
+                color="secondary"
+                gutterBottom
+              >
+                Contact Us
+              </Typography>
+            </Link>
+            <Link href="/">
+              <Typography
+                variant="subtitle1"
+                component="p"
+                color="secondary"
+                gutterBottom
+              >
+                Careers
+              </Typography>
+            </Link>
+            <Link href="/">
+              <Typography
+                variant="subtitle1"
+                component="p"
+                color="secondary"
+                gutterBottom
+              >
+                Our Mission
+              </Typography>
+            </Link>
+            <Link href="/">
+              <Typography
+                variant="subtitle1"
+                component="p"
+                color="secondary"
+                gutterBottom
+              >
+                Lifestyle Tips
+              </Typography>
+            </Link>
+          </Grid>
         </Grid>
       </Grid>
 
