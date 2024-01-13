@@ -6,7 +6,7 @@ import PersonIcon from "@mui/icons-material/Person";
 import SearchMenu from "./SearchMenu";
 import MobileMenu from "./MobileMenu";
 import Cart from "./Cart";
-import { useSession } from "next-auth/react";
+import { signIn, signOut, useSession } from "next-auth/react";
 import Image from "next/image";
 import Link from "next/link";
 
@@ -40,7 +40,7 @@ const Header = () => {
 
           {session ? (
             <Typography variant="body2" component="p" color="secondary">
-              {session.user.email}
+              {session.user.role}
             </Typography>
           ) : (
             <></>
@@ -80,7 +80,7 @@ const Header = () => {
               <a href="/">
                 <img
                   className="logo-img"
-                  src="logo2.jpg"
+                  src="/logo2.jpg"
                   alt="Logo image"
                 ></img>
               </a>
@@ -100,6 +100,14 @@ const Header = () => {
                 alignItems="center"
                 justifyContent="center"
               >
+                {session?.user.role == "Admin" ? (
+                  <Button color="primary" href="/admin/Dashboard">
+                    Administration
+                  </Button>
+                ) : (
+                  <></>
+                )}
+
                 {session ? (
                   <Button color="primary" href="/Dashboard">
                     Dashboard
@@ -127,7 +135,8 @@ const Header = () => {
                     variant="contained"
                     size="small"
                     color="primary"
-                    href="/api/auth/signout?callbackUrl=/"
+                   //href="/api/auth/signout?callbackUrl=/"
+                    onClick={() => signOut({ callbackUrl: '/' })}
                   >
                     Logout
                   </Button>
@@ -136,7 +145,8 @@ const Header = () => {
                     variant="outlined"
                     size="small"
                     color="primary"
-                    href="/api/auth/signin?callbackUrl=/"
+                    //href="/api/auth/signin?callbackUrl=/"
+                    onClick={() => signIn()}
                   >
                     Login
                   </Button>

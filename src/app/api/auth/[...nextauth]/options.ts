@@ -1,5 +1,5 @@
 import CredentialsProvider from "next-auth/providers/credentials";
-import { Auth, GetUser } from "../../../apiClient/Utils/route";
+import { Auth, GetUser } from "./utilities";
 
 export const options = {
   providers: [
@@ -65,5 +65,8 @@ export const options = {
         },
       };
     },
+  },
+  pages: {
+    signIn:"/auth/login",
   },
 };

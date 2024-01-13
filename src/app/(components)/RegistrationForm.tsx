@@ -2,10 +2,10 @@
 
 import { useRouter } from "next/navigation";
 import React, { useState } from "react";
-import { useApiClient } from "../apiClient/ClientContext";
-import { ApiException } from "../apiClient/Client";
+import { useApiClient } from "../api/apiClient/ClientContext";
+import { ApiException } from "../api/apiClient/Client";
 import { Stack, TextField, Button } from "@mui/material";
-import { RegisterDto, UserDto } from "../apiClient/Client";
+import { RegisterDto, UserDto } from "../api/apiClient/Client";
 
 const RegistrationForm = () => {
   const router = useRouter();
@@ -85,7 +85,7 @@ const RegistrationForm = () => {
         onSubmit={handleSubmit}
         sx={{
           mt: "80px",
-          width: { xs: "90vw", md: "50ch" },
+          width: { xs: "95vw", sm: "70vw", md: "55vw", lg: "30vw" },
           textAlign: "center",
         }}
       >
