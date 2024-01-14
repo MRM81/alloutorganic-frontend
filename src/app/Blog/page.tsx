@@ -1,6 +1,5 @@
 "use client";
 import { useEffect, useState } from "react";
-import { useSession } from "next-auth/react";
 import { redirect } from "next/navigation";
 import { Box, Grid, Typography } from "@mui/material";
 import BlogCard from "../(components)/BlogCard";
@@ -10,7 +9,6 @@ import IntroCard from "../(components)/IntroCard";
 
 const Blog = () => {
   const api = useApiClient();
-  const { data: session } = useSession();
   const [blogPosts, setBlogPosts] = useState<BlogPostDto[]>([]);
 
   useEffect(() => {

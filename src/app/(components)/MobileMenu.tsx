@@ -32,7 +32,7 @@ const MobileMenu = () => {
           <CloseIcon />
         </IconButton>
         <a href="/">
-          <img className="logo-img" src="logo.jpg"></img>
+          <img className="logo-img" src="/logo.jpg"></img>
         </a>
 
         <ButtonGroup
@@ -41,6 +41,18 @@ const MobileMenu = () => {
           variant="text"
           sx={{ py: "20px" }}
         >
+        
+          {session?.user.role == "Admin" ? (
+            <Button
+              href="/admin/Dashboard"
+              sx={{ justifyContent: "left", height: "50px" }}
+            >
+              Administration
+            </Button>
+          ) : (
+            <></>
+          )}
+
           {session ? (
             <Button
               href="/Dashboard"

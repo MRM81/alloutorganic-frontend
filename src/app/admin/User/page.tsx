@@ -8,7 +8,7 @@ import { useApiClient } from "@/app/api/apiClient/ClientContext";
 import { useState, useEffect } from "react";
 import { UserDto } from "@/app/api/apiClient/Client";
 
-const Dashboard = () => {
+const User = () => {
   const api = useApiClient();
 
   const { data: session } = useSession({
@@ -51,4 +51,4 @@ const Dashboard = () => {
   );
 };
 
-export default Dashboard;
+export default User;

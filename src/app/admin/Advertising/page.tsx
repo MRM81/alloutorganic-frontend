@@ -8,7 +8,7 @@ import { useApiClient } from "@/app/api/apiClient/ClientContext";
 import { useState, useEffect } from "react";
 import { UserDto } from "@/app/api/apiClient/Client";
 
-const Dashboard = () => {
+const Advertising = () => {
   const api = useApiClient();
 
   const { data: session } = useSession({
@@ -22,23 +22,26 @@ const Dashboard = () => {
 
   const getUser = async () => {
     await api
-      .user_Get(session?.user.id as string)
-      .then((res) => {
-        setUser(res);
-        return res;
-      })
-      .catch((err) => {
-        console.log(err.message);
-      });
-  };
+        .user_Get(session?.user.id as string)
+        .then((res) => {
+
+            setUser(res);
+            return res;
+        })
+        .catch((err) => {
+            console.log(err.message);
+        });
+    };
 
   useEffect(() => {
-    if (session) {
+   
+    if(session) {
       const fetchData = async () => {
         await getUser();
       };
       fetchData();
     }
+    
   }, [session]);
 
   return (
@@ -51,4 +54,4 @@ const Dashboard = () => {
   );
 };
 
-export default Dashboard;
+export default Advertising;

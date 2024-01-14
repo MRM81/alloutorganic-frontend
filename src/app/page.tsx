@@ -105,6 +105,9 @@ const Home = () => {
             variant="body2"
             component="p"
             textAlign="center"
+            width="60%"
+            color="text.secondary"
+            sx={{fontSize:"1.5em"}}
             gutterBottom
           >
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Pariatur
@@ -173,7 +176,7 @@ const Home = () => {
             >
               Live a 100% organic lifestyle
             </Typography>
-            <Typography variant="body2" component="p" gutterBottom>
+            <Typography variant="body1" component="p" gutterBottom>
               Lorem ipsum dolor sit amet consectetur adipisicing elit. Pariatur
               voluptates enim consequatur, a itaque perspiciatis quam earum
               temporibus excepturi suscipit odio beatae alias porro hic placeat,
@@ -213,7 +216,7 @@ const Home = () => {
             >
               Live a 100% organic lifestyle
             </Typography>
-            <Typography variant="body2" component="p" gutterBottom>
+            <Typography variant="body1" component="p" gutterBottom>
               Lorem ipsum dolor sit amet consectetur adipisicing elit. Pariatur
               voluptates enim consequatur, a itaque perspiciatis quam earum
               temporibus excepturi suscipit odio beatae alias porro hic placeat,
@@ -253,7 +256,7 @@ const Home = () => {
             >
               Live a 100% organic lifestyle
             </Typography>
-            <Typography variant="body2" component="p" gutterBottom>
+            <Typography variant="body1" component="p" gutterBottom>
               Lorem ipsum dolor sit amet consectetur adipisicing elit. Pariatur
               voluptates enim consequatur, a itaque perspiciatis quam earum
               temporibus excepturi suscipit odio beatae alias porro hic placeat,
