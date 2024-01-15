@@ -66,7 +66,7 @@ const Header = () => {
             backgroundColor: "white",
             display: "flex",
             justifyContent: "center",
-            boxShadow: "2px 2px 5px grey",
+            boxShadow: "2px 2px 20px #F9F9F9",
           }}
         >
           <Stack direction="column" alignItems="center" justifyContent="center">
@@ -80,7 +80,7 @@ const Header = () => {
               <a href="/">
                 <img
                   className="logo-img"
-                  src="/logo.jpg"
+                  src="/logo3.jpg"
                   alt="Logo image"
                 ></img>
               </a>

@@ -38,27 +38,23 @@ export default function SideBar(props: any) {
 
   return (
     <>
-      <Grid
-        bgcolor={"white"}
-        py={6}
-        px={4}
-        mx={0}
-        my={0}
-        minHeight={"100vh"}
-        minWidth={"300px"}
-        boxShadow={"2px 2px 10px grey"}
-        position={"fixed"}
-        sx={{ display: { xs: "none", md: "block" } }}
-      >
-        <Typography variant="subtitle1" color="primary.main" fontSize="1.4em">
-          All Out Organic CMS
-        </Typography>
+      <Grid container width="100vw">
+        <Grid
+          item
+          bgcolor={"white"}
+          xs={3}
+          minHeight={"100vh"}
+          boxShadow={"2px 2px 10px grey"}
+          sx={{ display: { xs: "none", md: "block" }, p: "20px 10px" }}
+        >
+          <Typography variant="h4" color="black" pl="10px">
+            All Out Organic
+          </Typography>
 
-        <Typography variant="body1" color="black">
-          {props.email}
-        </Typography>
+          <Typography variant="body2" color="black" pl="10px">
+            {props.email}
+          </Typography>
 
-        <nav className="py-6">
           <List>
             <ListItem disablePadding>
               <Link
@@ -149,7 +145,9 @@ export default function SideBar(props: any) {
               </Link>
             </ListItem>
           </List>
-        </nav>
+        </Grid>
+
+        <Grid item xs={9}></Grid>
       </Grid>
     </>
   );

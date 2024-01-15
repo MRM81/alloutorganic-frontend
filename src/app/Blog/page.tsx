@@ -13,7 +13,7 @@ const Blog = () => {
 
   useEffect(() => {
     const getData = async () => {
-      const response = await api.blogPost_GetAllPaged(1, 5);
+      const response = await api.blogPost_GetAllPaged(1, 20);
       return response;
     };
     getData()
@@ -35,7 +35,7 @@ const Blog = () => {
       >
         <Grid item xs={2.5}></Grid>
         <Grid item xs={6}>
-          <Typography
+          {/* <Typography
             variant="h5"
             component="h5"
             color="primary"
@@ -57,8 +57,9 @@ const Blog = () => {
             saepe fugit, numquam aspernatur, amet pariatur aperiam laudantium
             quod, placeat natus officiis nesciunt asperiores eos reprehenderit
             culpa. Suscipit, id! Sunt, pariatur?
-          </Typography>
+          </Typography> */}
           {blogPosts.map((post) => (
+            
             <BlogCard key={post.id} post={post} />
           ))}
         </Grid>
@@ -71,9 +72,3 @@ const Blog = () => {
 };
 
 export default Blog;
-{
-  /* <Typography variant="h3" component="h3" color="primary">Latest Blog Posts</Typography> */
-}
-{
-  /* <Box height="700px" bgcolor="rgb(23, 77, 36, 0.1)" pt="40px"></Box> */
-}

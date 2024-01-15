@@ -32,7 +32,7 @@ const MobileMenu = () => {
           <CloseIcon />
         </IconButton>
         <a href="/">
-          <img className="logo-img" src="/logo.jpg"></img>
+          <img className="logo3-img" src="/logo.jpg"></img>
         </a>
 
         <ButtonGroup

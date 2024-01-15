@@ -9,6 +9,7 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@aws-sdk/client-s3": "^3.490.0",
     "@emotion/react": "^11.11.3",
     "@emotion/styled": "^11.11.0",
     "@mui/icons-material": "^5.15.3",
@@ -16,13 +17,17 @@
     "@types/bcryptjs": "^2.4.6",
     "bcrypt": "^5.1.1",
     "dateformat": "^5.0.3",
+    "install": "^0.13.0",
     "jsonwebtoken": "^9.0.2",
     "mongodb": "^6.3.0",
     "mongoose": "^8.0.3",
     "next": "14.0.4",
     "next-auth": "^4.24.5",
+    "npm": "^10.3.0",
     "react": "^18",
-    "react-dom": "^18"
+    "react-dom": "^18",
+    "react-dropzone": "^14.2.3",
+    "react-image-file-resizer": "^0.4.8"
   },
   "devDependencies": {
     "@types/node": "^20",
