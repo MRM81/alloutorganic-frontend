@@ -45,7 +45,7 @@ const Advertising = () => {
   }, [session]);
 
   return (
-    <Grid container direction="row" height="150vh">
+    <Grid container direction="row" height="100vh">
       <Grid item xs={3}>
         <SideBar email={session?.user.email} />
       </Grid>

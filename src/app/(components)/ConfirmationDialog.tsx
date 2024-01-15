@@ -11,6 +11,7 @@ export default function ConfirmationDialog(props: any) {
 
   const handleClose = () => {
     setOpen(false);
+    window.location.href = "/admin/Blog";
   };
 
   return (
@@ -21,9 +22,7 @@ export default function ConfirmationDialog(props: any) {
         aria-labelledby="alert-dialog-title"
         aria-describedby="alert-dialog-description"
       >
-        <DialogTitle id="alert-dialog-title">
-          {"Blog Post Created"}
-        </DialogTitle>
+        <DialogTitle id="alert-dialog-title">{"Blog Post Created"}</DialogTitle>
         <DialogContent>
           <DialogContentText id="alert-dialog-description">
             You have successfully added a blog post to the All Out Organic blog.

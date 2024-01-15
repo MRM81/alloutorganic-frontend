@@ -45,7 +45,7 @@ export default function SideBar(props: any) {
           xs={3}
           minHeight={"100vh"}
           boxShadow={"2px 2px 10px grey"}
-          sx={{ display: { xs: "none", md: "block" }, p: "20px 10px" }}
+          sx={{ display: { xs: "none", md: "block" }, p: "80px 40px" }}
         >
           <Typography variant="h4" color="black" pl="10px">
             All Out Organic
